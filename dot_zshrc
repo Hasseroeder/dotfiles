@@ -91,7 +91,7 @@ alias ll="eza -lah --icons always --git"
 alias c='clear'
 alias fetch='fastfetch'
 alias fetchswap='~/.config/fastfetch/swap_logo.py ~/.config/fastfetch/config.jsonc'
-# alias metaflower='node ~/my\ projects/imageMeta/set-metadata.js --file'
+## alias metaflower='node ~/my\ projects/imageMeta/set-metadata.js --file'
 alias neovim="nvim"
 alias vim="nvim"
 alias ..='cd ..'
@@ -102,16 +102,16 @@ alias sudoku='nudoku'
 alias nethack='nethack-console'
 alias cmdlist='nano ~/Documents/cmdList.txt'
 
-if command -v nethack >/dev/null 2>%1; then
-	alias nethack="nethack"
+if command -v nethack >/dev/null 2>&1; then
+	  alias nethack="nethack"
 elif command -v nethack-console >/dev/null 2>&1; then
-	alias nethack="nethack-console"
+	  alias nethack="nethack-console"
 fi
 
 if command -v bat >/dev/null 2>&1; then
-    	alias bat="bat"
+   alias bat="bat"
 elif command -v batcat >/dev/null 2>&1; then
-    	alias bat="batcat"
+   alias bat="batcat"
 fi
 
 
