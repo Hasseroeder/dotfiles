@@ -6,4 +6,6 @@
 .config/bspwm/**
 .config/polybar/
 .config/polybar/**
+.config/sxhkd/
+.config/sxhkd/**
 {{- end }}

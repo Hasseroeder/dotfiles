@@ -1,0 +1,85 @@
+# program launcher
+super + space
+	rofi -show drun
+
+#
+# bspwm hotkeys
+#
+
+# quit/restart bspwm
+super + alt + {q,r}
+	bspc {quit,wm -r}
+
+# close and kill
+super + {q,ctrl + q}
+	bspc node -{c,k}
+
+# swap the current node and the biggest window
+super + g
+	bspc node -s biggest.window
+
+
+#
+# workspace
+#
+
+# switch to workspace 1-9
+super + {1-9}
+	bspc desktop -f ^{1-9}
+
+# move focused window to workspace 1-9
+super + shift + {1-9}
+	bspc node -d ^{1-9}
+
+#
+# focus/swap
+#
+
+# focus the older or newer node in the focus history
+super + {o,i}
+	bspc wm -h off; \
+	bspc node {older,newer} -f; \
+	bspc wm -h on
+
+# node moving
+super + {Left,Down,Up,Right}
+	bspc node -s {west,south,north,east}
+
+super + {h,j,k,l}
+	bspc node -s {west,south,north,east}
+
+super + Page_Up
+	bspc desktop -l monocle
+
+super + Page_Down
+	bspc desktop -l tiled
+
+
+
+# cycle focus
+alt + Tab
+	bspc node -f next.local
+
+alt + shift + Tab
+	bspc node -f prev.local
+
+#
+# preselect
+#
+
+# preselect the direction
+super + ctrl + {h,j,k,l}
+	bspc node -p {west,south,north,east}
+
+# preselect the ratio
+super + ctrl + {1-9}
+	bspc node -o 0.{1-9}
+
+# cancel the preselection for the focused node
+super + ctrl + space
+	bspc node -p cancel
+
+# cancel the preselection for the focused desktop
+super + ctrl + shift + space
+	bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
+
