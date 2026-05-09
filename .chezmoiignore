@@ -1,5 +1,5 @@
 {{ $ws := default "" .windowSystem }}
 
-{{- if ne .windowSystem "X11" }}
+{{- if ne $ws "X11" }}
 .xinitrc
 {{- end }}
