@@ -2,4 +2,8 @@
 
 {{- if ne $ws "X11" }}
 .xinitrc
+.config/bspwm/
+.config/bspwm/**
+.config/polybar/
+.config/polybar/**
 {{- end }}
