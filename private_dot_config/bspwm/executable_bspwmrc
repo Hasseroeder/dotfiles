@@ -4,9 +4,6 @@ pgrep -x sxhkd > /dev/null || sxhkd &
 
 bspc monitor -d I II III
 
-# compositor
-picom &
-
 # quit running polybars and start a new one
 polybar-msg cmd quit
 polybar main & disown
@@ -15,5 +12,5 @@ polybar main & disown
 setxkbmap de
 
 # set background
-DISPLAY=:0 feh --no-fehbg --bg-fill --randomize ~/.local/share/backgrounds/*.jpg &
+DISPLAY=:0 feh --no-fehbg --bg-fill --randomize ~/.local/share/backgrounds/* &
 
