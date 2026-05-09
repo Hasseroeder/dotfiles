@@ -1,0 +1,3 @@
+{{- if ne .windowSystem "X11" }}
+.xinitrc
+{{- end }}
