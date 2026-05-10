@@ -62,13 +62,13 @@
       "type": "command",
       "key": " │ ├ Core 0  ",
       "keyColor":"#ffffff",
-      "text": "sensors | grep \"Core 0:\"| awk -F\"°C\" '{print $1 \"°C\"}' | awk -F+ '{print $2}'"
+      "text": "sensors | awk '/Core 0/ {print $3}'"
     },
     {
       "type": "command",
       "key": " │ └ Core 1  ",
       "keyColor":"#ffffff",
-      "text": "sensors | grep \"Core 1:\"| awk -F\"°C\" '{print $1 \"°C\"}' | awk -F+ '{print $2}'"
+      "text": "sensors | awk '/Core 0/ {print $3}'"
     },
     {
       "type": "memory",
