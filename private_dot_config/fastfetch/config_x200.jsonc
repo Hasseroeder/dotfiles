@@ -11,7 +11,7 @@
     {
       "type": "command",
       "key": " ",
-      "text": "~/.config/fastfetch/header.sh 19 $USER@$(hostname) 59"
+      "text": "~/.config/fastfetch/header.sh 19 $USER@$HOSTNAME 59"
     },
     {
       "type": "title",
