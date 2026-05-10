@@ -1,5 +1,7 @@
 {{- if eq .chezmoi.hostname "elitebook" -}}
 {{-   include "private_dot_config/fastfetch/config_elitebook.jsonc" -}}
 {{- else if eq .chezmoi.hostname "x200" -}}
-{{-   include "private_dot_config/fastfetch/config_x200.jsonc" -}} 
+{{-   include "private_dot_config/fastfetch/config_x200.jsonc" -}}
+{{- else if eq .chezmoi.hostname "cachyos-8664" -}}
+{{-   include "private_dot_config/fastfetch/config_cachyos-8664" -}}
 {{- end -}}
