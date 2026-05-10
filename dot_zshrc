@@ -85,12 +85,22 @@ fi
 
 export EDITOR="nvim"
 
+export FF_DIR=~/.config/fastfetch
+if [[ -f "$FF_DIR/swap_logo_cachyos-x8664.py" ]] && \
+   [[ -f "$FF_DIR/manifest_cachyos-x8664.csv" ]]; then
+    
+    fetchswap() {
+        "$FF_DIR/swap_logo_cachyos-x8664.py" \
+            --config "$FF_DIR/config.jsonc" \
+            --manifest "$FF_DIR/manifest_cachyos-x8664.csv"
+    }
+fi
+
 # aliases 
 alias ls="eza -a --icons always"
 alias ll="eza -lah --icons always --git"
 alias c='clear'
 alias fetch='fastfetch'
-[[ -f "~/.config/fastfetch/swap_logo.py" ]] && alias fetchswap='~/.config/fastfetch/swap_logo.py ~/.config/fastfetch/config.jsonc'
 ## alias metaflower='node ~/my\ projects/imageMeta/set-metadata.js --file'
 alias neovim="nvim"
 alias vim="nvim"
