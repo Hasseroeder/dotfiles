@@ -31,7 +31,7 @@
     {
       "type": "command",
       "key": " ├  Time   ",
-      "text": "printf \"%s \\u001b[90m////\\e[0m %s \\u001b[90m////\\e[0m %s\n\" \"$(TZ=America/Edmonton date +%H:%M  SLC)\" \"$(TZ=America/Detroit date +%H:%M  NYC)\" \"$(TZ=Europe/Berlin date +%H:%M  BER)\"",
+      "text": "~/.config/fastfetch/time.sh",
       "keyColor": "#ccc3ff"
     },
     {
