@@ -68,7 +68,7 @@
       "type": "command",
       "key": " │ └ Core 1  ",
       "keyColor":"#ffffff",
-      "text": "sensors | awk '/Core 0/ {print $3}'"
+      "text": "sensors | awk '/Core 1/ {print $3}'"
     },
     {
       "type": "memory",
