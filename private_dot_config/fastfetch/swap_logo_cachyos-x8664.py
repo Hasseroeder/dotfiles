@@ -8,19 +8,22 @@ from typing import List, Dict, Any, Optional
 
 
 # -----------------------------
-# Data Loading
+# Loaders
 # -----------------------------
 
 def load_manifest(path: Path) -> List[Dict[str, Any]]:
     with path.open() as f:
         reader = csv.DictReader(f)
-        return [
-            {
-                "source": row.get("source", "").strip(),
+        images = []
+        for row in reader:
+            src = row.get("source", "").strip()
+            if not src:
+                continue
+            images.append({
+                "source": str(Path(src).expanduser()),
                 "colors": row.get("colors", "").split("|") if row.get("colors") else []
-            }
-            for row in reader
-        ]
+            })
+        return images
 
 
 def load_config(path: Path) -> Dict[str, Any]:
@@ -38,14 +41,14 @@ def load_config(path: Path) -> Dict[str, Any]:
 def rotate_logo(current: str, images: List[Dict[str, Any]]) -> str:
     names = [img["source"] for img in images]
     if current not in names:
-        return current
+        return names[0] if names else current
     idx = names.index(current)
     return names[(idx + 1) % len(names)]
 
 
-def find_entry(name: str, images: List[Dict[str, Any]]) -> Optional[Dict[str, Any]]:
+def find_entry(src: str, images: List[Dict[str, Any]]) -> Optional[Dict[str, Any]]:
     for entry in images:
-        if entry["source"] == name:
+        if entry["source"] == src:
             return entry
     return None
 
@@ -80,7 +83,7 @@ def apply_colors(modules: List[Any], colors: List[str]) -> None:
 
 
 # -----------------------------
-# Main Pipeline
+# Main
 # -----------------------------
 
 def parse_args():
@@ -96,17 +99,18 @@ def main():
     data = load_config(args.config)
     images = load_manifest(args.manifest)
 
-    # Rotate logo
+    # Current logo path (absolute)
     logo = data.get("logo", {})
-    current_src = Path(logo.get("source", "")).name
+    current_src = str(Path(logo.get("source", "")).expanduser())
+
+    # Rotate
     new_src = rotate_logo(current_src, images)
     logo["source"] = new_src
 
-    # Determine colors
+    # Colors
     entry = find_entry(new_src, images) or (images[0] if images else {})
     colors = entry.get("colors", [])
 
-    # Apply colors
     modules = data.get("modules")
     if not isinstance(modules, list):
         print("Config missing modules list.", file=sys.stderr)
@@ -121,5 +125,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-
