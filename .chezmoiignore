@@ -11,7 +11,7 @@
 {{- end }}
 
 {{- if ne .chezmoi.hostname "elitebook" }}
-.config/manifest_cachyos-x8664tfetch/config_elitebook.jsonc
+.config/fastfetch/config_elitebook.jsonc
 {{- end }}
 
 {{- if ne .chezmoi.hostname "x200" }}
