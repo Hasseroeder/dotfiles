@@ -86,13 +86,13 @@ fi
 export EDITOR="nvim"
 
 export FF_DIR=~/.config/fastfetch
-if [[ -f "$FF_DIR/swap_logo_cachyos-x8664.py" ]] && \
-   [[ -f "$FF_DIR/manifest_cachyos-x8664.csv" ]]; then
+if [[ -f "$FF_DIR/Images/swap_logo_cachyos-x8664.py" ]] && \
+   [[ -f "$FF_DIR/Images/manifest_cachyos-x8664.csv" ]]; then
     
     fetchswap() {
-        "$FF_DIR/swap_logo_cachyos-x8664.py" \
+        "$FF_DIR/Images/swap_logo_cachyos-x8664.py" \
             --config "$FF_DIR/config.jsonc" \
-            --manifest "$FF_DIR/manifest_cachyos-x8664.csv"
+            --manifest "$FF_DIR/Images/manifest_cachyos-x8664.csv"
     }
 fi
 
