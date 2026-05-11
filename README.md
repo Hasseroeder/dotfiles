@@ -57,7 +57,7 @@ I currently have 5 machines configured with this, and a few others in the works.
 ||
 ||
 | ### elitebook - an HP Elitebook 6930p |
-| Image |
+| <img src="Screenshots/elitebook.png" style="width:50%"> |
 ||
 ||
 | ### x200 - a Lenovo Thinkpad x200 |
@@ -145,7 +145,7 @@ sudo pacman -Syu --needed \
   xorg-xrandr xorg-xset xorg-xsetroot xorg-xrdb xorg-setxkbmap \
   xorg-xinput xorg-xprop xorg-xdpyinfo xorg-xev \
   bspwm sxhkd polybar feh rofi \
-  iproute2 firefox
+  iproute2 firefox maim
 ```
 
 Apt:
