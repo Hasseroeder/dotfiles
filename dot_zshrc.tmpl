@@ -8,19 +8,6 @@ source ~/.powerlevel10k/powerlevel10k.zsh-theme
 # Load completions
 autoload -Uz compinit && compinit
 
-# History
-HISTSIZE=5000
-HISTFILE=~/.zsh_history
-SAVEHIST=$HISTSIZE
-HISTUP=erase
-setopt appendhistory
-setopt sharehistory
-setopt hist_ignore_space
-setopt hist_ignore_all_dups
-setopt hist_save_no_dups
-setopt hist_ignore_dups
-setopt hist_find_no_dups
-
 # Completion styling
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
@@ -76,10 +63,11 @@ fi
 [[ -f "$FZF_BASE/key-bindings.zsh" ]] && source "$FZF_BASE/key-bindings.zsh"
 [[ -f "$FZF_BASE/completion.zsh"   ]] && source "$FZF_BASE/completion.zsh"
 
-# Zoxide integration
-eval "$(zoxide init --cmd cd zsh)"
+if command -v zoxide >/dev/null 2>&1; then
+  eval "$(zoxide init --cmd cd zsh)"
+fi
 
-if [[ -o interactive ]]; then
+if command -v fastfetch >/dev/null 2>&1; && [[ -o interactive ]]; then
 	fastfetch
 fi
 
@@ -100,4 +88,7 @@ function fetchswap() {
 
 if [[ -f ~/.config/zsh/aliases.zsh ]]; then
   source ~/.config/zsh/aliases.zsh
+fi
+if [[ -f ~/.config/zsh/history.zsh ]]; then
+  source ~/.config/zsh/history.zsh
 fi
