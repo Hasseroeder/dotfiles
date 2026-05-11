@@ -61,7 +61,7 @@ I currently have 5 machines configured with this, and a few others in the works.
 ||
 ||
 | ### x200 - a Lenovo Thinkpad x200 |
-| Image |
+| <img src="Screenshots/x200.png" style="width:50%"> |
 ||
 ||
 | ### antix1 - a little piece of shit i386 SBC that I rescued |
