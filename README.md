@@ -29,4 +29,4 @@ not yet online:
 - my old computer currently sitting in my closet
 - my mom's old computer currently sitting in the garage
 - a spare raspberry pi
-- a spare i386 SBC that is just as big a piece of shit
+- a spare i386 SBC that is just as big a piece of shit as antix1
