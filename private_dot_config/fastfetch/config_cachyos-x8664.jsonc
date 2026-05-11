@@ -18,35 +18,35 @@
     },
     {
       "type": "title",
-      "key": " ┌  Faggot ",
+      "key": " ┌  Faggot   ",
       "keyColor": "#ccc3ff",
       "format": "yes"
     },
     {
       "type": "localip",
-      "key": " ├ 󰌘 Ipv4   ",
+      "key": " ├ 󰌘 Ipv4     ",
       "keyColor": "#ccc3ff",
       "format": "{ipv4}"
     },
     {
       "type": "command",
-      "key": " ├  Time   ",
+      "key": " ├  Time     ",
       "text": "~/.config/fastfetch/time.sh",
       "keyColor": "#ccc3ff"
     },
     {
       "type": "locale",
-      "key": " ├ 󰊷 locale ",
+      "key": " ├ 󰊷 locale   ",
       "keyColor": "#ccc3ff"
     },
     {
       "type": "uptime",
-      "key": " ├ 󱎫 Uptime ",
+      "key": " ├ 󱎫 Uptime   ",
       "keyColor": "#ccc3ff"
     },
     {
       "type": "command",
-      "key": " └ 󱎫 OS Age ",
+      "key": " └ 󱎫 OS Age   ",
       "keyColor": "#ccc3ff",
       "text": "birth_install=$(stat -c %W /); current=$(date +%s); time_progression=$((current - birth_install)); days_difference=$((time_progression / 86400)); echo $days_difference days"
     },
@@ -58,31 +58,37 @@
     },
     {
       "type": "cpu",
-      "key": " ┌  CPU     ",
+      "key": " ┌  CPU      ",
       "format": "{name}",
       "keyColor": "#eeeeee"
     },
     {
       "type": "gpu",
-      "key": " ├  GPU     ",
+      "key": " ├  GPU      ",
       "format": "{name}",
       "keyColor": "#eeeeee"
     },
     {
       "type": "memory",
-      "key": " ├  RAM     ",
+      "key": " ├  RAM      ",
       "format": "{used}/{total}",
       "keyColor": "#eeeeee"
     },
     {
-      "type": "disk",
-      "key": " ├  Disk    ",
-      "format": "{mount-from} {filesystem} - {size-used}/{size-total}",
+      "type":"command",
+      "key": " ├  /        ",
+      "text":"~/.config/fastfetch/disk.sh /", 
+      "keyColor": "#eeeeee"
+    },
+    {
+      "type":"command",
+      "key": " ├  /mnt/sm/ ",
+      "text":"~/.config/fastfetch/disk.sh /mnt/smolnvme/", 
       "keyColor": "#eeeeee"
     },
     {
       "type": "display",
-      "key": " └ 󰍹 Display ",
+      "key": " └ 󰍹 Display  ",
       "keyColor": "#eeeeee",
       "format": "{name} - {width}x{height} @ {refresh-rate}Hz"
     },
@@ -96,7 +102,7 @@
       "type": "os",
       "key": " ┌ 󰌽 OS       ",
       "keyColor": "#ccc3ff",
-      "format": "{pretty-name} (Arch) {arch}"
+      "format": "{pretty-name} {arch}"
     },
     {
       "type": "kernel",
