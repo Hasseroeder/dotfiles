@@ -85,16 +85,14 @@ fi
 
 export EDITOR="nvim"
 
+{{ if eq .chezmoi.hostname "cachyos-x8664" }}
 export FF_DIR=~/.config/fastfetch
-if [[ -f "$FF_DIR/Images/swap_logo_cachyos-x8664.py" ]] && \
-   [[ -f "$FF_DIR/Images/manifest_cachyos-x8664.csv" ]]; then
-    
-    fetchswap() {
-        "$FF_DIR/Images/swap_logo_cachyos-x8664.py" \
-            --config "$FF_DIR/config.jsonc" \
-            --manifest "$FF_DIR/Images/manifest_cachyos-x8664.csv"
-    }
-fi
+function fetchswap() {
+    "$FF_DIR/Images/swap_logo_cachyos-x8664.py" \
+        --config "$FF_DIR/config.jsonc" \
+        --manifest "$FF_DIR/Images/manifest_cachyos-x8664.csv"
+}
+{{ end }}
 
 # aliases 
 alias ls="eza -a --icons always --git"
