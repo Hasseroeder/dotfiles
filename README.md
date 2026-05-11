@@ -16,7 +16,7 @@ sudo pacman -Syu --needed \
   git chezmoi zsh curl ca-certificates \
   fzf zoxide fastfetch neovim eza tree bat nethack nudoku btop htop \
   yazi xdg-utils mediainfo perl-image-exiftool imagemagick p7zip jq ripgrep fd \
-  gawk coreutils python nodejs npm luarocks make cmake cargo \
+  gawk coreutils python nodejs npm luarocks make cmake cargo 
 ```
 
 ### Apt:
