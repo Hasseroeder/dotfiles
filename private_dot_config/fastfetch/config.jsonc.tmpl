@@ -4,4 +4,6 @@
 {{-   include "private_dot_config/fastfetch/config_x200.jsonc" -}}
 {{- else if eq .chezmoi.hostname "cachyos-x8664" -}}
 {{-   include "private_dot_config/fastfetch/config_cachyos-x8664.jsonc" -}}
+{{- else if eq .chezmoi.hostname "antix1" -}}
+{{-   include "private_dot_config/fastfetch/config_antix1.jsonc" -}}
 {{- end -}}
