@@ -5,44 +5,10 @@ export PATH="$HOME/.local/bin:$PATH"
 source ~/.powerlevel10k/powerlevel10k.zsh-theme
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# Completion styling
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
-zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
-zstyle ':completion:*' menu no
-zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
-zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
-
 # OH-MY-ZSH
 export ZSH="$HOME/.oh-my-zsh"
 [[ -z "${plugins[*]}" ]] && plugins=(git fzf extract)
 source $ZSH/oh-my-zsh.sh
-
-# ZINIT
-source "$HOME/.local/share/zinit/zinit.git/zinit.zsh"
-autoload -Uz _zinit
-(( ${+_comps} )) && _comps[zinit]=_zinit
-
-zinit light-mode for \
-    	zdharma-continuum/zinit-annex-as-monitor \
-    	zdharma-continuum/zinit-annex-bin-gem-node \
-    	zdharma-continuum/zinit-annex-patch-dl \
-    	zdharma-continuum/zinit-annex-rust
-
-zinit light-mode for \
-    	zsh-users/zsh-syntax-highlighting \
-    	zsh-users/zsh-completions \
-    	zsh-users/zsh-autosuggestions \
-    	Aloxaf/fzf-tab
-
-zinit snippet OMZL::git.zsh
-
-zinit snippet OMZP::git
-zinit snippet OMZP::sudo
-zinit snippet OMZP::archlinux
-zinit snippet OMZP::aws
-zinit snippet OMZP::kubectl
-zinit snippet OMZP::kubectx
-zinit snippet OMZP::command-not-found
 
 # NVM
 export NVM_DIR="$HOME/.nvm"
@@ -90,5 +56,39 @@ if [[ -f ~/.config/zsh/history.zsh ]]; then
   source ~/.config/zsh/history.zsh
 fi
 
+# Completion styling
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+zstyle ':completion:*' menu no
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
+zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
+
 # Load completions
 autoload -Uz compinit && compinit
+
+# ZINIT
+source "$HOME/.local/share/zinit/zinit.git/zinit.zsh"
+autoload -Uz _zinit
+(( ${+_comps} )) && _comps[zinit]=_zinit
+
+zinit light-mode for \
+    	zdharma-continuum/zinit-annex-as-monitor \
+    	zdharma-continuum/zinit-annex-bin-gem-node \
+    	zdharma-continuum/zinit-annex-patch-dl \
+    	zdharma-continuum/zinit-annex-rust
+
+zinit light-mode for \
+    	zsh-users/zsh-syntax-highlighting \
+    	zsh-users/zsh-completions \
+    	zsh-users/zsh-autosuggestions \
+    	Aloxaf/fzf-tab
+
+zinit snippet OMZL::git.zsh
+
+zinit snippet OMZP::git
+zinit snippet OMZP::sudo
+zinit snippet OMZP::archlinux
+zinit snippet OMZP::aws
+zinit snippet OMZP::kubectl
+zinit snippet OMZP::kubectx
+zinit snippet OMZP::command-not-found
