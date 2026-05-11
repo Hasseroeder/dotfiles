@@ -97,7 +97,7 @@ if [[ -f "$FF_DIR/Images/swap_logo_cachyos-x8664.py" ]] && \
 fi
 
 # aliases 
-alias ls="eza -a --icons always"
+alias ls="eza -a --icons always --git"
 alias ll="eza -lah --icons always --git"
 alias c='clear'
 alias fetch='fastfetch'
@@ -107,10 +107,9 @@ alias vim="nvim"
 alias ..='cd ..'
 alias ...='cd ../..'
 alias back='cd -'
-alias tree='tree -a'
-alias sudoku='nudoku'
-alias nethack='nethack-console'
-alias cmdlist='nano ~/Documents/cmdList.txt'
+if command -v tree >/dev/null; then alias tree='tree -a'; fi
+if command -v nudoku >/dev/null; then alias sudoku='nudoku'; fi
+[[ -f ~/Documents/cmdList.txt ]] && alias cmdlist='nano ~/Documents/cmdList.txt'
 
 if command -v nethack >/dev/null 2>&1; then
 	  alias nethack="nethack"
