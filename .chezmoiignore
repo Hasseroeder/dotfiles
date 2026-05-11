@@ -23,3 +23,9 @@
 .config/fastfetch/Images/
 .config/fastfetch/Images/**
 {{- end }}
+
+{{- if not (lookPath "yazi") }}
+.config/yazi/
+.config/yazi/**
+{{ end }}
+
