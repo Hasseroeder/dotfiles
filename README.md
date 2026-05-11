@@ -1,5 +1,4 @@
 # Dotfiles managed by Chezmoi
-
 Initiate on a new system with:
 ```zsh
 chezmoi init --apply git@github.com:Hasseroeder/dotfiles.git
@@ -8,6 +7,58 @@ chezmoi init --apply git@github.com:Hasseroeder/dotfiles.git
 Or clone with:
 ```zsh
 git clone https://github.com/Hasseroeder/dotfiles.git
+```
+
+### Pacman: 
+Base:
+```bash
+sudo pacman -Syu --needed \
+  git chezmoi zsh curl ca-certificates \
+  fzf zoxide fastfetch neovim eza tree bat nethack nudoku \
+  yazi xdg-utils mediainfo perl-image-exiftool imagemagick p7zip jq ripgrep fd \
+  gawk coreutils python
+```
+Bspwm/Sxhkd Stack:
+```bash
+sudo pacman -Syu --needed \
+  xorg-server xorg-xinit xorg-xrdb xorg-xsetroot xorg-setxkbmap \
+  bspwm sxhkd polybar feh rofi iproute2 grep  
+```
+
+### Apt:
+Base:
+```bash
+sudo apt update
+sudo apt install -y \
+  git zsh curl ca-certificates \
+  fzf zoxide fastfetch neovim eza tree bat nethack-console nudoku \
+  yazi xdg-utils mediainfo libimage-exiftool-perl imagemagick p7zip-full jq ripgrep fd-find \
+  gawk coreutils python3
+```
+Bspwm/Sxhkd Stack:
+```bash
+sudo apt update
+sudo apt install -y \
+  xorg xinit x11-xserver-utils x11-xkb-utils \
+  bspwm sxhkd polybar feh rofi iproute2 grep
+```
+
+### Additional Programs
+NVM:
+```bash
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.4/install.sh | bash
+```
+Zinit:
+```bash
+bash -c "$(curl --fail --show-error --silent --location https://raw.githubusercontent.com/zdharma-continuum/zinit/HEAD/scripts/install.sh)"
+```
+Powerlevel10k
+```bash
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "$HOME/.powerlevel10k"
+```
+OhMyZsh
+```bash
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 
 ## Machines
@@ -55,66 +106,48 @@ I currently have 5 machines configured with this, and a few others in the works.
 - a spare i386 SBC that is just as big a piece of shit as antix1
 
 ## Packages
-### Required for the base dotfiles
-
-These are non-optional for the current `dot_zshrc.tmpl`: the shell startup file sources them directly, so a new machine should install/bootstrap them before applying these dotfiles or before starting a login shell.
-
-| Program | Why it is needed | Repository |
-| --- | --- | --- |
-| Git | Clones this repo and is used by Oh My Zsh/Zinit plugins. | [git/git](https://github.com/git/git) |
-| chezmoi | Applies these dotfiles from the source repo. | [twpayne/chezmoi](https://github.com/twpayne/chezmoi) |
-| Zsh | Primary shell -- configured by `dot_zshrc.tmpl`. | [zsh-users/zsh](https://github.com/zsh-users/zsh) |
-| Oh My Zsh | Sourced from `~/.oh-my-zsh/oh-my-zsh.sh` | [ohmyzsh/ohmyzsh](https://github.com/ohmyzsh/ohmyzsh) |
-| Powerlevel10k | Sourced from `~/.powerlevel10k/powerlevel10k.zsh-theme` | [romkatv/powerlevel10k](https://github.com/romkatv/powerlevel10k) |
-| Zinit | Sourced from `~/.local/share/zinit/zinit.git/zinit.zsh` | [zdharma-continuum/zinit](https://github.com/zdharma-continuum/zinit) |
-
-### Installed by Zinit at shell startup
-
-These are not OS packages in the scripts below; Zinit pulls them automatically once Zinit itself exists.
-
-| Plugin | Repository |
+### Required
+| Program | Repository |
 | --- | --- |
-| zinit-annex-as-monitor | [zdharma-continuum/zinit-annex-as-monitor](https://github.com/zdharma-continuum/zinit-annex-as-monitor) |
-| zinit-annex-bin-gem-node | [zdharma-continuum/zinit-annex-bin-gem-node](https://github.com/zdharma-continuum/zinit-annex-bin-gem-node) |
-| zinit-annex-patch-dl | [zdharma-continuum/zinit-annex-patch-dl](https://github.com/zdharma-continuum/zinit-annex-patch-dl) |
-| zinit-annex-rust | [zdharma-continuum/zinit-annex-rust](https://github.com/zdharma-continuum/zinit-annex-rust) |
-| zsh-syntax-highlighting | [zsh-users/zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting) |
-| zsh-completions | [zsh-users/zsh-completions](https://github.com/zsh-users/zsh-completions) |
-| zsh-autosuggestions | [zsh-users/zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions) |
-| fzf-tab | [Aloxaf/fzf-tab](https://github.com/Aloxaf/fzf-tab) |
+| Git | [git/git](https://github.com/git/git) |
+| chezmoi | [twpayne/chezmoi](https://github.com/twpayne/chezmoi) |
+| Zsh | [zsh-users/zsh](https://github.com/zsh-users/zsh) |
+| Oh My Zsh | [ohmyzsh/ohmyzsh](https://github.com/ohmyzsh/ohmyzsh) |
+| Powerlevel10k | [romkatv/powerlevel10k](https://github.com/romkatv/powerlevel10k) |
+| Zinit | [zdharma-continuum/zinit](https://github.com/zdharma-continuum/zinit) |
 
 ### Optional shell and terminal enhancements
 
-These programs are guarded with `command -v`, file-existence checks, or directory checks. The dotfiles continue to work without them, but install them for the intended experience.
+These programs are guarded with `command -v`, file-existence checks, or directory checks. The dotfiles continue to work without them.
 
-| Program |  | Repository |
-| --- | --- | --- |
-| fzf | Oh My Zsh plugin plus key bindings/completion if distro files exist under `/usr/share/doc/fzf/examples` or `/usr/share/fzf`. | [junegunn/fzf](https://github.com/junegunn/fzf) |
-| nvm | Node Version Manager integration if `~/.nvm/nvm.sh` exists. | [nvm-sh/nvm](https://github.com/nvm-sh/nvm) |
-| zoxide | Smarter `cd`; initialized only when `zoxide` is on `PATH`. | [ajeetdsouza/zoxide](https://github.com/ajeetdsouza/zoxide) |
-| fastfetch | Runs on interactive shells and powers `~/.config/fastfetch`. | [fastfetch-cli/fastfetch](https://github.com/fastfetch-cli/fastfetch) |
-| Neovim | Sets `EDITOR=nvim` and aliases `vim`/`neovim`; otherwise falls back to `vi`. | [neovim/neovim](https://github.com/neovim/neovim) |
-| eza | Replaces `ls`/`ll` aliases with icon/git-aware listings; otherwise uses classic `ls`. | [eza-community/eza](https://github.com/eza-community/eza) |
-| tree | Adds a `tree -a` alias. | [Old-Man-Programmer/tree](https://github.com/Old-Man-Programmer/tree) |
-| bat / batcat | Aliased to `bat` for convenience. | [sharkdp/bat](https://github.com/sharkdp/bat) |
-| nudoku | CLI sudoku game, aliased to `sudoku`. | [jubalh/nudoku](https://github.com/jubalh/nudoku) |
-| NetHack | CLI nethack game, aliased to `nethack`. | [NetHack/NetHack](https://github.com/NetHack/NetHack) |
+| Program| Repository |
+| --- | --- |
+| fzf | [junegunn/fzf](https://github.com/junegunn/fzf) |
+| nvm | [nvm-sh/nvm](https://github.com/nvm-sh/nvm) |
+| zoxide | [ajeetdsouza/zoxide](https://github.com/ajeetdsouza/zoxide) |
+| fastfetch | [fastfetch-cli/fastfetch](https://github.com/fastfetch-cli/fastfetch) |
+| Neovim | [neovim/neovim](https://github.com/neovim/neovim) |
+| eza | [eza-community/eza](https://github.com/eza-community/eza) |
+| tree | [Old-Man-Programmer/tree](https://github.com/Old-Man-Programmer/tree) |
+| bat / batcat | [sharkdp/bat](https://github.com/sharkdp/bat) |
+| nudoku | [jubalh/nudoku](https://github.com/jubalh/nudoku) |
+| NetHack | [NetHack/NetHack](https://github.com/NetHack/NetHack) |
 
 ### Optional fastfetch support tools
 
 `fastfetch` itself is optional, but when it is installed these configs expect the usual Unix tools below for custom command modules and the CachyOS logo swap helper.
 
-| Program | Why it is useful here | Repository |
+| Program | | Repository |
 | --- | --- | --- |
-| GNU awk | `disk.sh` uses `awk` with `strtonum`, which is provided by `gawk`. | [mitchcapper/gawk](https://github.com/mitchcapper/gawk) |
-| GNU coreutils | Provides `df` and `date` used by the fastfetch helper scripts. | [coreutils/coreutils](https://github.com/coreutils/coreutils) |
-| Python 3 | Runs `swap_logo_cachyos-x8664.py` on `cachyos-x8664`. | [python/cpython](https://github.com/python/cpython) |
+| GNU awk | `disk.sh` uses `awk` with `strtonum`| [mitchcapper/gawk](https://github.com/mitchcapper/gawk) |
+| GNU coreutils | `df` and `date` used by the fastfetch scripts | [coreutils/coreutils](https://github.com/coreutils/coreutils) |
+| Python 3 | Runs `swap_logo_cachyos-x8664.py` on `cachyos-x8664` | [python/cpython](https://github.com/python/cpython) |
 
 ### Optional Yazi file-manager stack
 
 The `.chezmoiignore` skips the Yazi config when `yazi` is not installed. If you install Yazi, the config can also use these helper programs for previews and openers.
 
-| Program | What enables it | Repository / upstream |
+| Program | | Repository / upstream |
 | --- | --- | --- |
 | Yazi | Terminal file manager configured under `private_dot_config/yazi/`. | [sxyazi/yazi](https://github.com/sxyazi/yazi) |
 | xdg-utils | `xdg-open` open/reveal actions on Linux. | [freedesktop/xdg-utils](https://gitlab.freedesktop.org/xdg/xdg-utils) |
@@ -126,17 +159,17 @@ The `.chezmoiignore` skips the Yazi config when `yazi` is not installed. If you 
 | ripgrep | Useful search helper for file-manager workflows. | [BurntSushi/ripgrep](https://github.com/BurntSushi/ripgrep) |
 | fd | Useful finder helper for file-manager workflows. | [sharkdp/fd](https://github.com/sharkdp/fd) |
 
-### Optional X11 / bspwm desktop stack
+### X11 / bspwm desktop stack
 
 The `.chezmoiignore` skips the X11 desktop config unless chezmoi data sets `windowSystem` to `X11`. On an X11 machine using this profile, treat this whole stack as required for the desktop session.
 
-| Program | What enables it | Repository / upstream |
+| Program | | Repository / upstream |
 | --- | --- | --- |
 | Xorg / X11 | Needed for `.xinitrc`, `bspwm`, `sxhkd`, `polybar`, `feh`, and `setxkbmap`. | [freedesktop/xorg-xserver](https://gitlab.freedesktop.org/xorg/xserver) |
 | bspwm | Tiling window manager controlled by `bspc`. | [baskerville/bspwm](https://github.com/baskerville/bspwm) |
 | sxhkd | Hotkey daemon launched from `bspwmrc`. | [baskerville/sxhkd](https://github.com/baskerville/sxhkd) |
 | polybar | Status bar launched from `bspwmrc`; config lives in `private_dot_config/polybar/`. | [polybar/polybar](https://github.com/polybar/polybar) |
-| feh | Randomizes and sets the X11 wallpaper. | [derf/feh](https://github.com/derf/feh) |
+| feh | Sets X11 wallpaper. | [derf/feh](https://github.com/derf/feh) |
 | xorg-setxkbmap | Sets the keyboard layout to German in `bspwmrc`. | [freedesktop/xkeyboard-config](https://gitlab.freedesktop.org/xkeyboard-config/xkeyboard-config) |
 | xrdb | Loads `~/.Xresources` from `.xinitrc` when present. | [freedesktop/xorg-app-xrdb](https://gitlab.freedesktop.org/xorg/app/xrdb) |
 | rofi | Program launcher bound to `super + space` in `sxhkdrc`. | [davatorium/rofi](https://github.com/davatorium/rofi) |
