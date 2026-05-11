@@ -50,40 +50,28 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 
 ## Machines
 I currently have 5 machines configured with this, and a few others in the works.
-
-<h3 style="margin-bottom:-1rem">Online</h3>
-<ul>
-	<li>
-		cachyos-x8664 - my main desktop computer
-	</li>
-	<li style="list-style:none">
-		<img src="Screenshots/cachyos-x8664.png" style="width:50%">
-	</li>
-	<li>
-		elitebook - an HP Elitebook 6930p
-	</li>
-	<li style="list-style:none">
-		Image
-	</li>
-	<li>
-		x200 - a Lenovo Thinkpad x200
-	</li>
-	<li style="list-style:none">
-		Image
-	</li>
-	<li>
-		antix1 - a little piece of shit i386 SBC that I rescued
-	</li>
-	<li style="list-style:none">
-		<img src="Screenshots/antix1.png" style="width:50%">
-	</li>
-	<li>
-		pi1 - which I use to host syncthing
-	</li>
-	<li style="list-style:none">
-		Image
-	</li>
-</ul>
+| |
+| --- |
+| ### cachyos-x8664 - my main desktop computer |
+| <img src="Screenshots/cachyos-x8664.png" style="width:50%"> |
+||
+||
+| ### elitebook - an HP Elitebook 6930p |
+| Image |
+||
+||
+| ### x200 - a Lenovo Thinkpad x200 |
+| Image |
+||
+||
+| ### antix1 - a little piece of shit i386 SBC that I rescued |
+| <img src="Screenshots/antix1.png" style="width:50%"> |
+||
+||
+| ### pi1 - which I use to host syncthing |
+| Image |
+||
+||
 
 <h3 style="margin-bottom:-1rem">Not Yet Online</h3>
 
