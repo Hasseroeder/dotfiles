@@ -20,6 +20,6 @@
 
 {{- if ne .chezmoi.hostname "cachyos-x8664" }}
 .config/fastfetch/config_cachyos-x8664.jsonc
-.config/fastfetch/swap_logo_cachyos-x8664.py
-.config/fastfetch/manifest_cachyos-x8664.csv
+.config/fastfetch/Images/
+.config/fastfetch/Images/**
 {{- end }}
