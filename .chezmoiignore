@@ -1,5 +1,9 @@
 {{ $ws := index . "windowSystem" | default "" }}
 
+README.md
+Screenshots/
+Screenshots/**
+
 {{- if ne $ws "X11" }}
 .xinitrc
 .config/bspwm/
