@@ -107,18 +107,7 @@ alias ...='cd ../..'
 alias back='cd -'
 if command -v tree >/dev/null; then alias tree='tree -a'; fi
 if command -v nudoku >/dev/null; then alias sudoku='nudoku'; fi
+if command -v batcat >/dev/null; then alias bat='batcat'; fi
+if command -v nethack-console >/dev/null; then alias nethack='nethack-console'; fi
 [[ -f ~/Documents/cmdList.txt ]] && alias cmdlist='nano ~/Documents/cmdList.txt'
-
-if command -v nethack >/dev/null 2>&1; then
-	  alias nethack="nethack"
-elif command -v nethack-console >/dev/null 2>&1; then
-	  alias nethack="nethack-console"
-fi
-
-if command -v bat >/dev/null 2>&1; then
-   alias bat="bat"
-elif command -v batcat >/dev/null 2>&1; then
-   alias bat="batcat"
-fi
-
 
