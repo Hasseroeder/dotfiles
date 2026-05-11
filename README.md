@@ -10,37 +10,24 @@ git clone https://github.com/Hasseroeder/dotfiles.git
 ```
 
 ### Pacman: 
-Base:
 ```bash
 sudo pacman -Syu --needed \
+  unzip man-db man-pages tldr grep \
   git chezmoi zsh curl ca-certificates \
-  fzf zoxide fastfetch neovim eza tree bat nethack nudoku \
+  fzf zoxide fastfetch neovim eza tree bat nethack nudoku btop htop \
   yazi xdg-utils mediainfo perl-image-exiftool imagemagick p7zip jq ripgrep fd \
-  gawk coreutils python
-```
-Bspwm/Sxhkd Stack:
-```bash
-sudo pacman -Syu --needed \
-  xorg-server xorg-xinit xorg-xrdb xorg-xsetroot xorg-setxkbmap \
-  bspwm sxhkd polybar feh rofi iproute2 grep  
+  gawk coreutils python nodejs npm luarocks make cmake cargo \
 ```
 
 ### Apt:
-Base:
 ```bash
 sudo apt update
 sudo apt install -y \
+  unzip man-db man-pages tldr grep \
   git zsh curl ca-certificates \
-  fzf zoxide fastfetch neovim eza tree bat nethack-console nudoku \
+  fzf zoxide fastfetch neovim eza tree bat nethack-console nudoku btop htop \
   yazi xdg-utils mediainfo libimage-exiftool-perl imagemagick p7zip-full jq ripgrep fd-find \
-  gawk coreutils python3
-```
-Bspwm/Sxhkd Stack:
-```bash
-sudo apt update
-sudo apt install -y \
-  xorg xinit x11-xserver-utils x11-xkb-utils \
-  bspwm sxhkd polybar feh rofi iproute2 grep
+  gawk coreutils python3 nodejs npm luarocks make cmake cargo
 ```
 
 ### Additional Programs
@@ -137,42 +124,48 @@ These programs are guarded with `command -v`, file-existence checks, or director
 
 `fastfetch` itself is optional, but when it is installed these configs expect the usual Unix tools below for custom command modules and the CachyOS logo swap helper.
 
-| Program | | Repository |
-| --- | --- | --- |
-| GNU awk | `disk.sh` uses `awk` with `strtonum`| [mitchcapper/gawk](https://github.com/mitchcapper/gawk) |
-| GNU coreutils | `df` and `date` used by the fastfetch scripts | [coreutils/coreutils](https://github.com/coreutils/coreutils) |
-| Python 3 | Runs `swap_logo_cachyos-x8664.py` on `cachyos-x8664` | [python/cpython](https://github.com/python/cpython) |
+| Program | Repository |
+| --- | --- |
+| GNU awk | [mitchcapper/gawk](https://github.com/mitchcapper/gawk) |
+| GNU coreutils | [coreutils/coreutils](https://github.com/coreutils/coreutils) |
+| Python 3 | [python/cpython](https://github.com/python/cpython) |
 
 ### Optional Yazi file-manager stack
 
 The `.chezmoiignore` skips the Yazi config when `yazi` is not installed. If you install Yazi, the config can also use these helper programs for previews and openers.
 
-| Program | | Repository / upstream |
-| --- | --- | --- |
-| Yazi | Terminal file manager configured under `private_dot_config/yazi/`. | [sxyazi/yazi](https://github.com/sxyazi/yazi) |
-| xdg-utils | `xdg-open` open/reveal actions on Linux. | [freedesktop/xdg-utils](https://gitlab.freedesktop.org/xdg/xdg-utils) |
-| MediaInfo | Media metadata action. | [MediaArea/MediaInfo](https://github.com/MediaArea/MediaInfo) |
-| ExifTool | EXIF metadata action. | [exiftool/exiftool](https://github.com/exiftool/exiftool) |
-| ImageMagick | Yazi `magick` image spotter/previewer for AVIF/HEIF/JXL. | [ImageMagick/ImageMagick](https://github.com/ImageMagick/ImageMagick) |
-| p7zip / 7-Zip | Archive previews/extraction support. | [p7zip-project/p7zip](https://github.com/p7zip-project/p7zip) / [ip7z/7zip](https://github.com/ip7z/7zip) |
-| jq | Useful JSON helper alongside Yazi's JSON previews. | [jqlang/jq](https://github.com/jqlang/jq) |
-| ripgrep | Useful search helper for file-manager workflows. | [BurntSushi/ripgrep](https://github.com/BurntSushi/ripgrep) |
-| fd | Useful finder helper for file-manager workflows. | [sharkdp/fd](https://github.com/sharkdp/fd) |
+| Program | Repository |
+| --- | --- |
+| Yazi | [sxyazi/yazi](https://github.com/sxyazi/yazi) |
+| xdg-utils  | [freedesktop/xdg-utils](https://gitlab.freedesktop.org/xdg/xdg-utils) |
+| MediaInfo | [MediaArea/MediaInfo](https://github.com/MediaArea/MediaInfo) |
+| ExifTool | [exiftool/exiftool](https://github.com/exiftool/exiftool) |
+| ImageMagick | [ImageMagick/ImageMagick](https://github.com/ImageMagick/ImageMagick) |
+| p7zip / 7-Zip | [p7zip-project/p7zip](https://github.com/p7zip-project/p7zip) / [ip7z/7zip](https://github.com/ip7z/7zip) |
+| jq | [jqlang/jq](https://github.com/jqlang/jq) |
+| ripgrep |  [BurntSushi/ripgrep](https://github.com/BurntSushi/ripgrep) |
+| fd | [sharkdp/fd](https://github.com/sharkdp/fd) |
 
 ### X11 / bspwm desktop stack
 
 The `.chezmoiignore` skips the X11 desktop config unless chezmoi data sets `windowSystem` to `X11`. On an X11 machine using this profile, treat this whole stack as required for the desktop session.
 
-| Program | | Repository / upstream |
-| --- | --- | --- |
-| Xorg / X11 | Needed for `.xinitrc`, `bspwm`, `sxhkd`, `polybar`, `feh`, and `setxkbmap`. | [freedesktop/xorg-xserver](https://gitlab.freedesktop.org/xorg/xserver) |
-| bspwm | Tiling window manager controlled by `bspc`. | [baskerville/bspwm](https://github.com/baskerville/bspwm) |
-| sxhkd | Hotkey daemon launched from `bspwmrc`. | [baskerville/sxhkd](https://github.com/baskerville/sxhkd) |
-| polybar | Status bar launched from `bspwmrc`; config lives in `private_dot_config/polybar/`. | [polybar/polybar](https://github.com/polybar/polybar) |
-| feh | Sets X11 wallpaper. | [derf/feh](https://github.com/derf/feh) |
-| xorg-setxkbmap | Sets the keyboard layout to German in `bspwmrc`. | [freedesktop/xkeyboard-config](https://gitlab.freedesktop.org/xkeyboard-config/xkeyboard-config) |
-| xrdb | Loads `~/.Xresources` from `.xinitrc` when present. | [freedesktop/xorg-app-xrdb](https://gitlab.freedesktop.org/xorg/app/xrdb) |
-| rofi | Program launcher bound to `super + space` in `sxhkdrc`. | [davatorium/rofi](https://github.com/davatorium/rofi) |
-| iproute2 | Provides `ip` for the Polybar network script. | [iproute2/iproute2](https://github.com/iproute2/iproute2) |
-| GNU grep | Provides `grep -P` for the Polybar network script. | [GNU grep](https://www.gnu.org/software/grep/) |
+Packman:
+```bash 
+sudo pacman -Syu --needed \
+  xorg-server xorg-xinit \
+  xorg-xrandr xorg-xset xorg-xsetroot xorg-xrdb xorg-setxkbmap \
+  xorg-xinput xorg-xprop xorg-xdpyinfo xorg-xev \
+  bspwm sxhkd polybar feh rofi \
+  iproute2 firefox
+```
 
+Apt:
+```bash
+sudo apt update
+sudo apt install -y \
+  xorg xinit \
+  x11-xserver-utils x11-utils x11-xkb-utils \
+  bspwm sxhkd polybar feh rofi \
+  iproute2 firefox
+```
