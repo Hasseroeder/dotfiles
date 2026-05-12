@@ -1,18 +1,10 @@
 # Dotfiles managed by Chezmoi
-Initiate on a new system with:
-```zsh
-chezmoi init --apply Hasseroeder
-```
-
-Or clone with:
-```zsh
-git clone https://github.com/Hasseroeder/dotfiles.git
-```
-
+Install git and OpenSSH first if the machine does not already have them.
+Also the other stuff while you're at it.
 ### Pacman: 
 ```bash
 sudo pacman -Syu --needed \
-  unzip man-db man-pages tldr grep \
+  openssh unzip man-db man-pages tldr grep \
   git chezmoi zsh curl ca-certificates \
   fzf zoxide fastfetch neovim eza tree bat nethack nudoku btop htop \
   yazi xdg-utils mediainfo perl-image-exiftool imagemagick p7zip jq ripgrep fd \
@@ -23,7 +15,7 @@ sudo pacman -Syu --needed \
 ```bash
 sudo apt update
 sudo apt install -y \
-  unzip man-db man-pages tldr grep \
+  openssh unzip man-db man-pages tldr grep \
   git zsh curl ca-certificates \
   fzf zoxide fastfetch neovim eza tree bat nethack-console nudoku btop htop \
   yazi xdg-utils mediainfo libimage-exiftool-perl imagemagick p7zip-full jq ripgrep fd-find \
@@ -46,6 +38,27 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "$HOME/.powerle
 OhMyZsh
 ```bash
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+```
+
+Then do keygen.
+```zsh
+ssh-keygen -t ed25519
+```
+
+Copy the public link and paste it into here:
+GitHub → Settings → SSH and GPG keys → New SSH key
+```zsh
+cat ~/.ssh/id_ed25519.pub
+```
+
+Then initiate on a new system with:
+```zsh
+chezmoi init --apply Hasseroeder
+```
+
+Or clone with:
+```zsh
+git clone https://github.com/Hasseroeder/dotfiles.git
 ```
 
 ## Machines
