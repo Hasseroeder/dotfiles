@@ -40,6 +40,7 @@ OhMyZsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 
+## Chezmoi Initiation
 Then do keygen.
 ```zsh
 ssh-keygen -t ed25519
