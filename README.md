@@ -1,7 +1,7 @@
 # Dotfiles managed by Chezmoi
 Initiate on a new system with:
 ```zsh
-chezmoi init --apply git@github.com:Hasseroeder/dotfiles.git
+chezmoi init --apply Hasseroeder
 ```
 
 Or clone with:
