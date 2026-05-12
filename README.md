@@ -161,7 +161,5 @@ sudo apt install -y \
 ## Notes from `.chezmoiignore`
 
 - `README.md` and `Screenshots/` are source-repo documentation only and are never applied to `$HOME`.
-- `.xinitrc`, `bspwm`, `polybar`, and `sxhkd` configs are only applied when `windowSystem` is `X11`.
 - Host-specific fastfetch configs are only applied to their matching hostnames.
 - The CachyOS fastfetch image rotation files are only applied on `cachyos-x8664`.
-- Yazi configs are skipped unless `yazi` is already available on `PATH` at apply time.
