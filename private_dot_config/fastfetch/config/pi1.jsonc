@@ -131,13 +131,13 @@
       "type": "command",
       "key": " ├  Activity  ",
       "keyColor":"#ccccff",
-      "text":"~/.config/fastfetch/bool_writer.sh $(systemctl --user is-active syncthing.service >/dev/null; echo $?)"
+      "text":"~/.config/fastfetch/scripts/bool_writer.sh $(systemctl --user is-active syncthing.service >/dev/null; echo $?)"
     },
     {
       "type": "command",
       "key": " └  Uptime    ",
       "keyColor":"#ccccff",
-      "text":"~/.config/fastfetch/timestamp_to_uptime.sh \"$(systemctl --user show syncthing.service -p ActiveEnterTimestamp | cut -d= -f2)\""
+      "text":"~/.config/fastfetch/scripts/timestamp_to_uptime.sh \"$(systemctl --user show syncthing.service -p ActiveEnterTimestamp | cut -d= -f2)\""
     },
     "break",
     "colors"
