@@ -1,18 +1,14 @@
 {
   "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/master/doc/json_schema.json",
   "logo": {
-    "source": "~/.config/fastfetch/ASCII/cd.txt",
+    "source": "~/.config/fastfetch/Logos/ASCII/trans_neo.txt",
     "padding": {
       "left": 2,
       "right": 3,
       "top": 1
-    },
-    "color": {
-      "1": "#ccccff"
     }
   },
   "modules": [
-    "break",
     {
       "type": "command",
       "key":" ",
@@ -22,30 +18,29 @@
       "type": "os",
       "key": " ┌  OS       ",
       "format": "{pretty-name}",
-      "keyColor":"#ccccff"
+      "keyColor":"#52b0d6"
     },
     {
       "type": "kernel",
       "key": " ├ 󰌽 Kernel   ",
       "format": "{release}",
-      "keyColor":"#ccccff"
+      "keyColor":"#52b0d6"
     },
     {
       "type": "uptime",
       "key": " ├ 󱎫 Uptime   ",
-      "keyColor":"#ccccff"
+      "keyColor":"#52b0d6"
     },
     {
       "type": "packages",
       "key": " ├  Pkgs     ",
-      "keyColor":"#ccccff"
+      "keyColor":"#52b0d6"
     },
     {
       "type": "shell",
       "key": " └ 󰆍 Shell    ",
-      "keyColor":"#ccccff"
+      "keyColor":"#52b0d6"
     },
-    "break",
     {
       "type": "command",
       "key":" ",
@@ -54,34 +49,33 @@
     {
       "type": "cpu",
       "key": " ┌  CPU      ",
-      "format": "{name} - {march}",
-      "keyColor":"#ccccff"
+      "format": "{name}",
+      "keyColor":"#D9D9D9"
     },
     {
       "type": "memory",
       "key": " ├  RAM      ",
       "format": "{used}/{total} ({percentage})",
-      "keyColor":"#ccccff"
+      "keyColor":"#D9D9D9"
     },
     {
-      "type": "command",
+      "type": "swap",
       "key": " ├  Swap     ",
-      "text": "[ \"$(free -h | awk '/Swap/ {print $2}')\" = \"0B\" ] && echo \"Disabled\" || echo \"Enabled\"",
-      "keyColor":"#ccccff"
+      "format": "{used}/{total} ({percentage})",
+      "keyColor":"#D9D9D9"
     },
     {
       "type": "command",
       "key": " ├  /        ",
       "text": "~/.config/fastfetch/disk.sh /",
-      "keyColor":"#ccccff"
+      "keyColor":"#D9D9D9"
     },
     {
       "type": "command",
-      "key": " └  /mnt/ssd ",
-      "text": "~/.config/fastfetch/disk.sh /mnt/ssd",
-      "keyColor":"#ccccff"
+      "key": " └  /home    ",
+      "text": "~/.config/fastfetch/disk.sh /home",
+      "keyColor":"#D9D9D9"
     },
-    "break",
     {
       "type": "command",
       "key":" ",
@@ -89,55 +83,37 @@
     },
     {
       "type": "title",
-      "key": " ┌  Host     ",
+      "key": " ┌  Faggot   ",
+      "keyColor": "#DA99A3",
+      "format": "yes"
+    },
+    {
+      "type": "title",
+      "key": " ├  Host     ",
       "format": "{user-name}@{host-name}",
-      "keyColor":"#ccccff"
+      "keyColor":"#DA99A3"
     },
     { 
       "type": "command", 
       "key": " ├ 󰌘 Ipv4     ",
       "text": "~/.config/fastfetch/ssh_ipv4.sh", 
-      "keyColor":"#ccccff"
+      "keyColor":"#DA99A3"
     },
     {
       "type": "locale",
       "key": " ├ 󰊷 Locale   ",
-      "keyColor":"#ccccff"
+      "keyColor":"#DA99A3"
     },   
     {
       "type": "command",
       "key": " ├  Time     ",
       "text": "~/.config/fastfetch/time.sh",
-      "keyColor":"#ccccff"
+      "keyColor": "#DA99A3"
     },
     {
       "type": "terminal",
       "key": " └ 󰆍 Terminal ",
-      "keyColor":"#ccccff"
-    },
-    "break",
-    {
-      "type": "command",
-      "key":" ",
-      "text": "~/.config/fastfetch/header.sh 2 Syncthing 59"
-    },
-    {
-      "type": "command",
-      "key": " ┌  Version   ",
-      "keyColor":"#ccccff",
-      "text": "syncthing --version | awk '{print $1 \" \" $2}'"
-    },
-    {
-      "type": "command",
-      "key": " ├  Activity  ",
-      "keyColor":"#ccccff",
-      "text":"~/.config/fastfetch/bool_writer.sh $(systemctl --user is-active syncthing.service >/dev/null; echo $?)"
-    },
-    {
-      "type": "command",
-      "key": " └  Uptime    ",
-      "keyColor":"#ccccff",
-      "text":"~/.config/fastfetch/timestamp_to_uptime.sh \"$(systemctl --user show syncthing.service -p ActiveEnterTimestamp | cut -d= -f2)\""
+      "keyColor":"#DA99A3"
     },
     "break",
     "colors"

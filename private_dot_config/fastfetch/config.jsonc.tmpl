@@ -1,11 +1,11 @@
 {{- if eq .chezmoi.hostname "elitebook" -}}
-{{-   include "private_dot_config/fastfetch/config_elitebook.jsonc" -}}
+{{-   include "private_dot_config/fastfetch/config/elitebook.jsonc" -}}
 {{- else if eq .chezmoi.hostname "x200" -}}
-{{-   include "private_dot_config/fastfetch/config_x200.jsonc" -}}
+{{-   include "private_dot_config/fastfetch/config/x200.jsonc" -}}
 {{- else if eq .chezmoi.hostname "cachyos-x8664" -}}
-{{-   include "private_dot_config/fastfetch/config_cachyos-x8664.jsonc" -}}
+{{-   include "private_dot_config/fastfetch/config/cachyos-x8664.jsonc" -}}
 {{- else if eq .chezmoi.hostname "antix1" -}}
-{{-   include "private_dot_config/fastfetch/config_antix1.jsonc" -}}
+{{-   include "private_dot_config/fastfetch/config/antix1.jsonc" -}}
 {{- else if eq .chezmoi.hostname "pi1" -}}
-{{-   include "private_dot_config/fastfetch/config_pi1.jsonc" -}}
+{{-   include "private_dot_config/fastfetch/config/pi1.jsonc" -}}
 {{- end -}}

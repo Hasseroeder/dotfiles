@@ -1,134 +1,140 @@
 {
   "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/master/doc/json_schema.json",
   "logo": {
-    "source": "/home/heather/.config/fastfetch/Images/image1.png",
-    "height": 22,
+    "source": "/home/heather/.config/fastfetch/Logos/ASCII/TransPad.txt",
     "padding": {
       "left": 4,
-      "right": 4,
-      "top": 1
+      "right": 4
     }
   },
   "modules": [
     {
       "type": "command",
       "key": " ",
-      "header": true,
-      "text": "~/.config/fastfetch/header.sh 19 $USER@$(hostname) 59"
+      "text": "~/.config/fastfetch/header.sh 19 $USER@$HOSTNAME 59"
     },
     {
       "type": "title",
-      "key": " ┌  Faggot   ",
-      "keyColor": "#ccc3ff",
+      "key": " ┌  Faggot ",
+      "keyColor": "#5FCBF7",
       "format": "yes"
     },
     {
       "type": "localip",
-      "key": " ├ 󰌘 Ipv4     ",
-      "keyColor": "#ccc3ff",
+      "key": " ├ 󰌘 Ipv4   ",
+      "keyColor": "#5FCBF7",
       "format": "{ipv4}"
     },
     {
       "type": "command",
-      "key": " ├  Time     ",
-      "text": "~/.config/fastfetch/time.sh",
-      "keyColor": "#ccc3ff"
-    },
-    {
-      "type": "locale",
-      "key": " ├ 󰊷 locale   ",
-      "keyColor": "#ccc3ff"
-    },
-    {
-      "type": "uptime",
-      "key": " ├ 󱎫 Uptime   ",
-      "keyColor": "#ccc3ff"
+      "key": " ├  Ipv4   ",
+      "keyColor": "#5FCBF7",
+      "text": "curl ifconfig.me"
     },
     {
       "type": "command",
-      "key": " └ 󱎫 OS Age   ",
-      "keyColor": "#ccc3ff",
+      "key": " ├  Time   ",
+      "text": "~/.config/fastfetch/time.sh",
+      "keyColor": "#5FCBF7"
+    },
+    {
+      "type": "locale",
+      "key": " ├ 󰊷 locale ",
+      "keyColor": "#5FCBF7"
+    },
+    {
+      "type": "uptime",
+      "key": " ├ 󱎫 Uptime ",
+      "keyColor": "#5FCBF7"
+    },
+    {
+      "type": "command",
+      "key": " └ 󱎫 OS Age ",
+      "keyColor": "#5FCBF7",
       "text": "birth_install=$(stat -c %W /); current=$(date +%s); time_progression=$((current - birth_install)); days_difference=$((time_progression / 86400)); echo $days_difference days"
     },
     {
       "type": "command",
       "key": " ",
-      "header": true,
       "text": "~/.config/fastfetch/header.sh 19 Hardware 59"
     },
     {
       "type": "cpu",
-      "key": " ┌  CPU      ",
+      "key": " ┌  CPU     ",
       "format": "{name}",
-      "keyColor": "#eeeeee"
+      "keyColor": "#ffffff"
     },
     {
-      "type": "gpu",
-      "key": " ├  GPU      ",
-      "format": "{name}",
-      "keyColor": "#eeeeee"
+      "type": "command",
+      "key": " │ ├ Core 0  ",
+      "keyColor":"#ffffff",
+      "text": "sensors | awk '/Core 0/ {print $3}'"
+    },
+    {
+      "type": "command",
+      "key": " │ └ Core 1  ",
+      "keyColor":"#ffffff",
+      "text": "sensors | awk '/Core 1/ {print $3}'"
     },
     {
       "type": "memory",
-      "key": " ├  RAM      ",
+      "key": " ├  RAM     ",
       "format": "{used}/{total}",
-      "keyColor": "#eeeeee"
+      "keyColor": "#ffffff"
     },
     {
-      "type":"command",
-      "key": " ├  /        ",
-      "text":"~/.config/fastfetch/disk.sh /", 
-      "keyColor": "#eeeeee"
+      "type": "battery",
+      "key": " ├ 󱊢 Battery ",
+      "keyColor": "#ffffff"
     },
     {
-      "type":"command",
-      "key": " ├  /mnt/sm/ ",
-      "text":"~/.config/fastfetch/disk.sh /mnt/smolnvme/", 
-      "keyColor": "#eeeeee"
+      "type": "command",
+      "key": " ├  /       ",
+      "text": "~/.config/fastfetch/disk.sh /",
+      "keyColor": "#ffffff"
     },
     {
       "type": "display",
-      "key": " └ 󰍹 Display  ",
-      "keyColor": "#eeeeee",
-      "format": "{name} - {width}x{height} @ {refresh-rate}Hz"
+      "key": " └ 󰍹 Display ",
+      "keyColor": "#ffffff",
+      "format": "{width}x{height} @ {refresh-rate}Hz"
     },
     {
       "type": "command",
       "key": " ",
-      "header": true,
       "text": "~/.config/fastfetch/header.sh 19 Software 59"
     },
     {
       "type": "os",
       "key": " ┌ 󰌽 OS       ",
-      "keyColor": "#ccc3ff",
+      "keyColor": "#FA87AA",
       "format": "{pretty-name} {arch}"
     },
     {
       "type": "kernel",
       "key": " ├ 󰌽 Kernel   ",
-      "keyColor": "#ccc3ff",
+      "keyColor": "#FA87AA",
       "format": "{release}"
     },
     {
       "type": "de",
       "key": " ├  DE       ",
-      "keyColor": "#ccc3ff"
+      "keyColor": "#FA87AA"
     },
     {
       "type": "wm",
       "key": " ├  WM       ",
-      "keyColor": "#ccc3ff"
+      "keyColor": "#FA87AA"
     },
     {
       "type": "shell",
       "key": " ├ 󰆍 Shell    ",
-      "keyColor": "#ccc3ff"
+      "keyColor": "#FA87AA"
     },
     {
       "type": "terminal",
       "key": " └ 󰆍 Terminal ",
-      "keyColor": "#ccc3ff"
+      "keyColor": "#FA87AA"
     },
     "break",
     "colors"
