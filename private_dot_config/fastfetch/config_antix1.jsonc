@@ -27,12 +27,6 @@
       "keyColor":"#52b0d6"
     },
     {
-      "type": "localip",
-      "key": " ├ 󰌘 Server   ",
-      "format": "{ipv4}",
-      "keyColor":"#52b0d6"
-    },
-    {
       "type": "uptime",
       "key": " ├ 󱎫 Uptime   ",
       "keyColor":"#52b0d6"
@@ -102,7 +96,7 @@
     { 
       "type": "command", 
       "key": " ├ 󰌘 Client   ",
-      "text": "echo $SSH_CLIENT | cut -d' ' -f1", 
+      "text": "~/.config/fastfetch/ssh_ipv4.sh", 
       "keyColor":"#DA99A3"
     },
     {
