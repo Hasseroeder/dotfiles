@@ -14,16 +14,7 @@ Screenshots/**
 .config/sxhkd/**
 {{- end }}
 
-{{- if ne .chezmoi.hostname "elitebook" }}
-.config/fastfetch/config_elitebook.jsonc
-{{- end }}
-
-{{- if ne .chezmoi.hostname "x200" }}
-.config/fastfetch/config_x200.jsonc
-{{- end }}
-
 {{- if ne .chezmoi.hostname "cachyos-x8664" }}
-.config/fastfetch/config_cachyos-x8664.jsonc
 .config/fastfetch/Images/
 .config/fastfetch/Images/**
 {{- end }}
