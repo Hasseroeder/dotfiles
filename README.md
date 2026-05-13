@@ -83,7 +83,7 @@ I currently have 5 machines configured with this, and a few others in the works.
 ||
 ||
 | ### pi1 - which I use to host syncthing |
-| Image |
+| <img src="Screenshots/pi1.png" style="width:50%"> |
 ||
 ||
 
