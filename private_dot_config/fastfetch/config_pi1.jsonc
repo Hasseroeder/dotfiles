@@ -6,9 +6,13 @@
       "left": 2,
       "right": 3,
       "top": 1
+    },
+    "color": {
+      "1": "#ccccff"
     }
   },
   "modules": [
+    "break",
     {
       "type": "command",
       "key":" ",
@@ -18,29 +22,30 @@
       "type": "os",
       "key": " ┌  OS       ",
       "format": "{pretty-name}",
-      "keyColor":"#52b0d6"
+      "keyColor":"#ccccff"
     },
     {
       "type": "kernel",
       "key": " ├ 󰌽 Kernel   ",
       "format": "{release}",
-      "keyColor":"#52b0d6"
+      "keyColor":"#ccccff"
     },
     {
       "type": "uptime",
       "key": " ├ 󱎫 Uptime   ",
-      "keyColor":"#52b0d6"
+      "keyColor":"#ccccff"
     },
     {
       "type": "packages",
       "key": " ├  Pkgs     ",
-      "keyColor":"#52b0d6"
+      "keyColor":"#ccccff"
     },
     {
       "type": "shell",
       "key": " └ 󰆍 Shell    ",
-      "keyColor":"#52b0d6"
+      "keyColor":"#ccccff"
     },
+    "break",
     {
       "type": "command",
       "key":" ",
@@ -50,32 +55,33 @@
       "type": "cpu",
       "key": " ┌  CPU      ",
       "format": "{name} - {march}",
-      "keyColor":"#D9D9D9"
+      "keyColor":"#ccccff"
     },
     {
       "type": "memory",
       "key": " ├  RAM      ",
       "format": "{used}/{total} ({percentage})",
-      "keyColor":"#D9D9D9"
+      "keyColor":"#ccccff"
     },
     {
       "type": "command",
       "key": " ├  Swap     ",
       "text": "[ \"$(free -h | awk '/Swap/ {print $2}')\" = \"0B\" ] && echo \"Disabled\" || echo \"Enabled\"",
-      "keyColor":"#D9D9D9"
+      "keyColor":"#ccccff"
     },
     {
       "type": "command",
       "key": " ├  /        ",
       "text": "~/.config/fastfetch/disk.sh /",
-      "keyColor":"#D9D9D9"
+      "keyColor":"#ccccff"
     },
     {
       "type": "command",
       "key": " └  /mnt/ssd ",
       "text": "~/.config/fastfetch/disk.sh /mnt/ssd",
-      "keyColor":"#D9D9D9"
+      "keyColor":"#ccccff"
     },
+    "break",
     {
       "type": "command",
       "key":" ",
@@ -85,30 +91,31 @@
       "type": "title",
       "key": " ┌  Host     ",
       "format": "{user-name}@{host-name}",
-      "keyColor":"#DA99A3"
+      "keyColor":"#ccccff"
     },
     { 
       "type": "command", 
       "key": " ├ 󰌘 Ipv4     ",
       "text": "~/.config/fastfetch/ssh_ipv4.sh", 
-      "keyColor":"#DA99A3"
+      "keyColor":"#ccccff"
     },
     {
       "type": "locale",
       "key": " ├ 󰊷 Locale   ",
-      "keyColor":"#DA99A3"
+      "keyColor":"#ccccff"
     },   
     {
       "type": "command",
       "key": " ├  Time     ",
       "text": "~/.config/fastfetch/time.sh",
-      "keyColor": "#DA99A3"
+      "keyColor":"#ccccff"
     },
     {
       "type": "terminal",
       "key": " └ 󰆍 Terminal ",
-      "keyColor":"#DA99A3"
+      "keyColor":"#ccccff"
     },
+    "break",
     {
       "type": "command",
       "key":" ",
@@ -117,19 +124,19 @@
     {
       "type": "command",
       "key": " ┌  Version   ",
-      "keyColor": "#DA99A3",
+      "keyColor":"#ccccff",
       "text": "syncthing --version | awk '{print $1 \" \" $2}'"
     },
     {
       "type": "command",
       "key": " ├  Activity  ",
-      "keyColor": "#DA99A3",
+      "keyColor":"#ccccff",
       "text":"~/.config/fastfetch/bool_writer.sh $(systemctl --user is-active syncthing.service >/dev/null; echo $?)"
     },
     {
       "type": "command",
       "key": " └  Uptime    ",
-      "keyColor": "#DA99A3",
+      "keyColor":"#ccccff",
       "text":"~/.config/fastfetch/timestamp_to_uptime.sh \"$(systemctl --user show syncthing.service -p ActiveEnterTimestamp | cut -d= -f2)\""
     },
     "break",
