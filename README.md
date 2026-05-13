@@ -1,4 +1,4 @@
-# Dotfiles managed by Chezmoi
+2# Dotfiles managed by Chezmoi
 Install git and OpenSSH first if the machine does not already have them.
 Also the other stuff while you're at it.
 ### Pacman: 
@@ -172,7 +172,7 @@ sudo apt install -y \
   iproute2 firefox
 ```
 
-## Notes from `.chezmoiignore`
+## Notes
 
 - `README.md` and `Screenshots/` are source-repo documentation only and are never applied to `$HOME`.
 - Host-specific fastfetch configs are only applied to their matching hostnames.
