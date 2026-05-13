@@ -15,8 +15,8 @@ Screenshots/**
 {{- end }}
 
 {{- if ne .chezmoi.hostname "cachyos-x8664" }}
-.config/fastfetch/Images/
-.config/fastfetch/Images/**
+.config/fastfetch/scripts/imageRotation
+.config/fastfetch/scripts/imageRotation/**
 {{- end }}
 
 {{- if not (lookPath "yazi") }}

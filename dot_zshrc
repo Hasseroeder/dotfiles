@@ -40,14 +40,14 @@ else
   export EDITOR="vi"
 fi
 
-{{ if eq .chezmoi.hostname "cachyos-x8664" }}
 export FF_DIR="$HOME/.config/fastfetch"
-function fetchswap() {
-    "$FF_DIR/Images/swap_logo_cachyos-x8664.py" \
-        --config "$FF_DIR/config.jsonc" \
-        --manifest "$FF_DIR/Images/manifest_cachyos-x8664.csv"
-}
-{{ end }}
+if [[ -d ~/.config/fastfetch/scripts/imageRotation ]]; then
+  function fetchswap() {
+      "$FF_DIR/scripts/imageRotation/swap_logo.py" \
+          --config "$FF_DIR/config.jsonc" \
+          --manifest "$FF_DIR/scripts/imageRotation/manifest.csv"
+  }
+fi
 
 if [[ -f ~/.config/zsh/aliases.zsh ]]; then
   source ~/.config/zsh/aliases.zsh

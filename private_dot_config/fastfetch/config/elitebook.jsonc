@@ -11,7 +11,7 @@
     {
       "type": "command",
       "key": " ",
-      "text": "~/.config/fastfetch/header.sh 19 $USER@$(hostname) 59"
+      "text": "~/.config/fastfetch/scripts/header.sh 19 $USER@$(hostname) 59"
     },
     {
       "type": "title",
@@ -28,7 +28,7 @@
     {
       "type": "command",
       "key": " ├  Time   ",
-      "text": "~/.config/fastfetch/time.sh",
+      "text": "~/.config/fastfetch/scripts/time.sh",
       "keyColor": "#5FCBF7"
     },
     {
@@ -50,7 +50,7 @@
     {
       "type": "command",
       "key": " ",
-      "text": "~/.config/fastfetch/header.sh 19 Hardware 59"
+      "text": "~/.config/fastfetch/scripts/header.sh 19 Hardware 59"
     },
     {
       "type": "cpu",
@@ -84,13 +84,13 @@
     {
       "type": "command",
       "key": " ├  /       ",
-      "text": "~/.config/fastfetch/disk.sh /",
+      "text": "~/.config/fastfetch/scripts/disk.sh /",
       "keyColor": "#ffffff"
     },
     {
       "type": "command",
       "key": " ├  /home   ",
-      "text": "~/.config/fastfetch/disk.sh /home",
+      "text": "~/.config/fastfetch/scripts/disk.sh /home",
       "keyColor": "#ffffff"
     },
     {
@@ -102,7 +102,7 @@
     {
       "type": "command",
       "key": " ",
-      "text": "~/.config/fastfetch/header.sh 19 Software 59"
+      "text": "~/.config/fastfetch/scripts/header.sh 19 Software 59"
     },
     {
       "type": "os",

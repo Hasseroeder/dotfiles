@@ -14,7 +14,7 @@
       "type": "command",
       "key": " ",
       "header": true,
-      "text": "~/.config/fastfetch/header.sh 19 $USER@$(hostname) 59"
+      "text": "~/.config/fastfetch/scripts/header.sh 19 $USER@$(hostname) 59"
     },
     {
       "type": "title",
@@ -31,7 +31,7 @@
     {
       "type": "command",
       "key": " ├  Time     ",
-      "text": "~/.config/fastfetch/time.sh",
+      "text": "~/.config/fastfetch/scripts/time.sh",
       "keyColor": "#ccc3ff"
     },
     {
@@ -54,7 +54,7 @@
       "type": "command",
       "key": " ",
       "header": true,
-      "text": "~/.config/fastfetch/header.sh 19 Hardware 59"
+      "text": "~/.config/fastfetch/scripts/header.sh 19 Hardware 59"
     },
     {
       "type": "cpu",
@@ -77,13 +77,13 @@
     {
       "type":"command",
       "key": " ├  /        ",
-      "text":"~/.config/fastfetch/disk.sh /", 
+      "text":"~/.config/fastfetch/scripts/disk.sh /", 
       "keyColor": "#eeeeee"
     },
     {
       "type":"command",
       "key": " ├  /mnt/sm/ ",
-      "text":"~/.config/fastfetch/disk.sh /mnt/smolnvme/", 
+      "text":"~/.config/fastfetch/scripts/disk.sh /mnt/smolnvme/", 
       "keyColor": "#eeeeee"
     },
     {
@@ -96,7 +96,7 @@
       "type": "command",
       "key": " ",
       "header": true,
-      "text": "~/.config/fastfetch/header.sh 19 Software 59"
+      "text": "~/.config/fastfetch/scripts/header.sh 19 Software 59"
     },
     {
       "type": "os",
