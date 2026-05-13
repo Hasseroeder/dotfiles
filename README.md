@@ -1,4 +1,4 @@
-2# Dotfiles managed by Chezmoi
+# Dotfiles managed by Chezmoi
 Install git and OpenSSH first if the machine does not already have them.
 Also the other stuff while you're at it.
 ### Pacman: 
