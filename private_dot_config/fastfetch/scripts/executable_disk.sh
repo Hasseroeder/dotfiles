@@ -1,8 +1,8 @@
-#!/bin/zsh
+#!/bin/sh
 
-disk="$1"
-startColor="${2:-#aaeeaa}"   # default green
-endColor="${3:-#ff4444}"     # default red
+disk=$1
+startColor=${2:-#aaeeaa}   # default green
+endColor=${3:-#ff4444}     # default red
 
 df --output=source,fstype,used,size -B1 "$disk" \
 | awk -v c1="$startColor" -v c2="$endColor" '

@@ -1,6 +1,5 @@
 #!/bin/sh
 
-# Get the timestamp when Syncthing entered "active"
 start_ts=$1
 
 # Convert to epoch seconds
