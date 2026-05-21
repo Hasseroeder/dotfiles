@@ -8,7 +8,9 @@ header="┌"
 header="$header$(printf '─%.0s' $(seq 1 $1))"
 header="$header $2 "
 
-right_padding=$(expr $3 - ${#header} - 1)
+length=$(printf "$header" | wc -m)
+
+right_padding=$(expr $3 - $length - 1)
 header="$header$(printf '─%.0s' {$(seq 1 $right_padding)})"
 header="$header┐"
 printf "\e[0;90m$header\n"
