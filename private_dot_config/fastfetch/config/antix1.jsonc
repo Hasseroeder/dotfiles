@@ -95,7 +95,7 @@
     },
     { 
       "type": "command", 
-      "key": " ├ 󰌘 Ipv4     ",
+      "key": " ├ 󰌘 SSH      ",
       "text": "~/.config/fastfetch/scripts/ssh_ipv4.sh", 
       "keyColor":"#DA99A3"
     },
