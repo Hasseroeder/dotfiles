@@ -5,7 +5,7 @@ Also the other stuff while you're at it.
 ```bash
 sudo pacman -Syu --needed \
   openssh unzip man-db man-pages tldr grep \
-  git chezmoi zsh curl ca-certificates \
+  git chezmoi zsh curl ca-certificates dysk \
   fzf zoxide fastfetch neovim eza tree bat nethack nudoku btop htop \
   yazi xdg-utils mediainfo perl-image-exiftool imagemagick p7zip jq ripgrep fd \
   gawk coreutils python nodejs npm luarocks make cmake cargo kitty-terminfo
@@ -16,7 +16,7 @@ sudo pacman -Syu --needed \
 sudo apt update
 sudo apt install -y \
   unzip man-db tldr grep \
-  git zsh curl ca-certificates \
+  git zsh curl ca-certificates dysk \
   fzf zoxide fastfetch neovim eza tree bat nethack-console nudoku btop htop \
   xdg-utils mediainfo libimage-exiftool-perl imagemagick p7zip-full jq ripgrep fd-find \
   gawk coreutils python3 nodejs npm luarocks make cmake cargo kitty-terminfo
