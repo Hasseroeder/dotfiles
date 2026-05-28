@@ -1,5 +1,9 @@
-export PATH="$HOME/bin:$PATH"
-export PATH="$HOME/.local/bin:$PATH"
+# Unified PATH for tools installed in different locations
+for dir in "$HOME/bin" "$HOME/.local/bin" /usr/local/bin /usr/bin; do
+  [[ -d "$dir" ]] && PATH="$dir:$PATH"
+done
+export PATH
+
 
 # Powerlink 10k
 source ~/.powerlevel10k/powerlevel10k.zsh-theme
