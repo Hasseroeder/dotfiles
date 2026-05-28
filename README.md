@@ -21,13 +21,14 @@ sudo apt install -y \
   xdg-utils mediainfo libimage-exiftool-perl imagemagick p7zip-full jq ripgrep fd-find \
   gawk coreutils python3 nodejs npm luarocks make cmake cargo kitty-terminfo
 ```
+
 Apt doesn't feature chezmoi in its repositories:
 ```bash
 sh -c "$(curl -fsLS https://get.chezmoi.io)"
 ```
 
 
-### Additional Programs
+## Additional Programs
 NVM:
 ```bash
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.4/install.sh | bash
