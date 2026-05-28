@@ -8,7 +8,7 @@ sudo pacman -Syu --needed \
   git chezmoi zsh curl ca-certificates \
   fzf zoxide fastfetch neovim eza tree bat nethack nudoku btop htop \
   yazi xdg-utils mediainfo perl-image-exiftool imagemagick p7zip jq ripgrep fd \
-  gawk coreutils python nodejs npm luarocks make cmake cargo 
+  gawk coreutils python nodejs npm luarocks make cmake cargo kitty-terminfo
 ```
 
 ### Apt:
@@ -19,7 +19,7 @@ sudo apt install -y \
   git zsh curl ca-certificates \
   fzf zoxide fastfetch neovim eza tree bat nethack-console nudoku btop htop \
   xdg-utils mediainfo libimage-exiftool-perl imagemagick p7zip-full jq ripgrep fd-find \
-  gawk coreutils python3 nodejs npm luarocks make cmake cargo
+  gawk coreutils python3 nodejs npm luarocks make cmake cargo kitty-terminfo
 ```
 
 ### Additional Programs
