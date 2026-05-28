@@ -15,10 +15,10 @@ sudo pacman -Syu --needed \
 ```bash
 sudo apt update
 sudo apt install -y \
-  openssh unzip man-db man-pages tldr grep \
+  unzip man-db tldr grep \
   git zsh curl ca-certificates \
   fzf zoxide fastfetch neovim eza tree bat nethack-console nudoku btop htop \
-  yazi xdg-utils mediainfo libimage-exiftool-perl imagemagick p7zip-full jq ripgrep fd-find \
+  xdg-utils mediainfo libimage-exiftool-perl imagemagick p7zip-full jq ripgrep fd-find \
   gawk coreutils python3 nodejs npm luarocks make cmake cargo
 ```
 
