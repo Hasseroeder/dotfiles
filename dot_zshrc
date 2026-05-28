@@ -1,5 +1,5 @@
 # Unified PATH for tools installed in different locations
-for dir in "$HOME/bin" "$HOME/.local/bin" /usr/local/bin /usr/bin; do
+for dir in "$HOME/bin" "$HOME/.local/bin" /usr/local/bin /usr/bin /usr/sbin /sbin; do
   [[ -d "$dir" ]] && PATH="$dir:$PATH"
 done
 export PATH
