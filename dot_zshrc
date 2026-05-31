@@ -1,6 +1,6 @@
 # On bad systems (antix), exporting $LANG is the best way to set locale 
 # We only do this on these bad systems where $LANG doesn't exist otherwise
-if [ -z "$LANG" ] && locale -a | grep 'en_US.utf8'; then
+if [ -z "$LANG" ] && locale -a | grep -q 'en_US.utf8'; then
     export LANG=en_US.UTF-8
 fi
 
