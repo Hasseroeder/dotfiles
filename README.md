@@ -84,11 +84,11 @@ I currently have 5 machines configured with this, and a few others in the works.
 | <img src="Screenshots/x200.png" style="width:50%"> |
 ||
 ||
-| ### antix1 - a little piece of shit i386 SBC that I rescued. I use it to host 2 APIs and to tinker |
+| ### antix1 - a little piece of shit i386 SBC that I rescued. I use it to host APIs and to tinker |
 | <img src="Screenshots/antix1.png" style="width:50%"> |
 ||
 ||
-| ### pi1 - which I use to host syncthing |
+| ### pi1 - a Raspberry Pi3b hosting syncthing |
 | <img src="Screenshots/pi1.png" style="width:50%"> |
 ||
 ||
