@@ -1,0 +1,7 @@
+ news / newsboat  -  Shows Updates for specified links
+
+
+Games
+ nudoku / sudoku  -  just sudoku...
+ nethack / nethack-console  -  RPG-like text-based game
+ 
