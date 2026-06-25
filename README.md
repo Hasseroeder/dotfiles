@@ -84,7 +84,7 @@ I currently have 5 machines configured with this, and a few others in the works.
 | <img src="Screenshots/x200.png" style="width:50%"> |
 ||
 ||
-| ### antix1 - a little piece of shit i386 SBC that I rescued |
+| ### antix1 - a little piece of shit i386 SBC that I rescued. I use it to host 2 APIs and to tinker |
 | <img src="Screenshots/antix1.png" style="width:50%"> |
 ||
 ||
