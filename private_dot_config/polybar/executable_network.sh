@@ -1,15 +1,10 @@
 #!/bin/sh
 
-# Get IPs (empty if disconnected)
-eth_ip=$(ip -4 addr show enp0s25 | grep -oP '(?<=inet\s)\d+(\.\d+){3}')
-wlan_ip=$(ip -4 addr show wlan0 | grep -oP '(?<=inet\s)\d+(\.\d+){3}')
+iface=$(ip route get 1.1.1.1 | awk '{print $5; exit}')
 
-# Prefer LAN
-if [ -n "$eth_ip" ]; then
-    echo "eth0 $eth_ip"
-elif [ -n "$wlan_ip" ]; then
-    echo "wlan0 $wlan_ip"
+if [ -n "$iface" ]; then
+    ip=$(ip -4 -o addr show "$iface" | awk '{print $4}' | cut -d/ -f1)
+    echo "$iface $ip"
 else
     echo "no network"
 fi
-
