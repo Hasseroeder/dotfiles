@@ -60,9 +60,8 @@ cat ~/.ssh/id_ed25519.pub
 
 Then initiate on a new system with:
 ```zsh
-chezmoi init --apply Hasseroeder
+chezmoi init --apply git@github.com:hasseroeder/dotfiles.git
 ```
-
 Or clone with:
 ```zsh
 git clone https://github.com/Hasseroeder/dotfiles.git
