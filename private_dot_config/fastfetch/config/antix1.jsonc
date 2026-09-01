@@ -72,6 +72,12 @@
     },
     {
       "type": "command",
+      "key": " ├  /data        ",
+      "text": "~/.config/fastfetch/scripts/disk.sh /data",
+      "keyColor":"#D9D9D9"
+    },
+    {
+      "type": "command",
       "key": " └  /home    ",
       "text": "~/.config/fastfetch/scripts/disk.sh /home",
       "keyColor":"#D9D9D9"
