@@ -6,10 +6,12 @@
     "padding": {
       "left": 4,
       "right": 4,
-      "top": 1
+      "top": 2,
     }
   },
   "modules": [
+    "break",
+    "break",
     {
       "type": "command",
       "key": " ",
@@ -131,6 +133,7 @@
       "keyColor": "#ccc3ff"
     },
     "break",
-    "colors"
+    "colors",
+    "break"
   ]
 }
